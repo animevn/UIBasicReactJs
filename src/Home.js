@@ -1,39 +1,61 @@
-import React from "react";
-import styled from "styled-components"
+import React, {useState} from "react";
 
 function Home() {
 
-  const Box = styled.div `
-    border: 1px solid green;
-    border-radius: 5px;
-    padding: 20px;
-    height: 150px;
-  `;
+  const [count, setCount] = useState(0);
+  const [size, setSize] = useState(1);
+
+  function onAddClick() {
+    setCount(old=> old + 1);
+  }
+
+  function onTakeClick() {
+    if (count > 0) setCount(old=> old -1);
+  }
+
+  function onGrowClick() {
+    if (size < 6) setSize(old=>old + 1);
+  }
+
+  function onShrinkClick() {
+    if (size > 0) setSize(old=>old - 1);
+  }
+
+  function onResetClick() {
+    setSize(1);
+    setCount(0);
+  }
+
+
+
 
   return (
     <div className="container mt-5">
 
-      <Box className="col-xl-5 col-lg-5 col-md-7 col-sm-9 col-9 mx-auto
-                      d-flex align-items-center flex-column">
-        <div className="my-auto">0</div>
-      </Box>
+      <div style={{"height":"150px"}}
+           className="col-xl-5 col-lg-5 col-md-7 col-sm-9 col-9 mx-auto rounded
+                      d-flex align-items-center flex-column border border-success">
+        <p className="my-auto" style={{"font-size":`${size}rem`}}>
+          {count}
+        </p>
+      </div>
 
       <div className="col-xl-5 col-lg-5 col-md-7 col-sm-9 col-9 mx-auto mt-5">
 
         <div className="row d-flex justify-content-around mb-5">
-          <button className="btn btn-outline-success">
+          <button className="btn btn-outline-success" onClick={onAddClick}>
             Add
           </button>
-          <button className="btn btn-outline-success">
+          <button className="btn btn-outline-success" onClick={onTakeClick}>
             Take
           </button>
         </div>
 
         <div className="row d-flex justify-content-around mb-5">
-          <button className="btn btn-outline-success">
+          <button className="btn btn-outline-success" onClick={onGrowClick}>
             Grow
           </button>
-          <button className="btn btn-outline-success">
+          <button className="btn btn-outline-success" onClick={onShrinkClick}>
             Shrink
           </button>
         </div>
@@ -42,7 +64,7 @@ function Home() {
           <button className="btn btn-outline-success">
             Show
           </button>
-          <button className="btn btn-outline-success">
+          <button className="btn btn-outline-success" onClick={onResetClick}>
             Reset
           </button>
         </div>
