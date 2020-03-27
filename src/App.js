@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header"
 import Footer from "./Footer";
+import Home from "./Home";
 
 
 function App() {
@@ -11,9 +12,7 @@ function App() {
 
         {/*app goes in here*/}
         <div className="container pt-2">
-          <h1 className="text-success">
-            Hello World
-          </h1>
+          <Home/>
         </div>
 
       </div>
