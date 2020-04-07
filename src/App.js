@@ -7,7 +7,7 @@ import {Box} from "@material-ui/core";
 
 function App() {
   return (
-    <Box className="main">
+    <Box display="flex" flexDirection="column" justifyContent="space-between" minHeight="100vh">
       <Grid>
         <Header/>
         {/*app goes down here*/}
