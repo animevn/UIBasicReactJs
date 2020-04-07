@@ -1,11 +1,11 @@
-/*This one is for all page, basically page will includes two div, one is main, the other */
-/*is footer-custom, everything else inside main */
+/*This one is for all page, basically page will includes two div, one is main, the other*/
+/*is footer-custom, everything else inside main*/
 html, body{
     height: 100%;
 }
 
 body{
-    background-color: transparent;
+    background-color: red;
 }
 
 .main{
