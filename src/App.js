@@ -9,10 +9,11 @@ function App() {
     <div className="main">
       <Grid>
         <Header/>
-        
-        {/*app goes in here*/}
+        {/*app goes down here*/}
+
         <Home/>
 
+        {/*app goes up here*/}
       </Grid>
       <Footer/>
     </div>
