@@ -4,11 +4,11 @@ import "./index.css";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {ThemeProvider} from "@material-ui/core";
 import App from "./App";
-import theme from "./indexTheme";
+import indexTheme from "./indexTheme";
 
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={indexTheme}>
     <CssBaseline>
       <App/>
     </CssBaseline>
