@@ -14,9 +14,5 @@ ReactDOM.render(
     </CssBaseline>
   </ThemeProvider>
 
-
-
-
-
   , document.getElementById('root'));
 
