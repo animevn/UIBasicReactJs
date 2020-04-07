@@ -7,28 +7,30 @@ function Footer() {
 
   const Copyright = ()=>{
     return (
-      <Typography variant="body2" color="textSecondary" align="center">
+      <Box align="center">
         <Box>
-          Copyright ©
-          <Link color="inherit" href="#">
-            UI Basics
-          </Link>
-          {" " + new Date().getFullYear()}.
+         <Typography variant="body1">
+           Copyright ©
+           <Link color="inherit" href="#">
+             UI Basics
+           </Link>
+           {" " + new Date().getFullYear()}.
+         </Typography>
         </Box>
 
         <Box fontStyle="italic" my={0.5}>
-          From
-          <span role="img" aria-label=""> 👨</span> with
-          <span role="img" aria-label=""> ❤️</span>
+          <Typography variant="body2">
+            From
+            <span role="img" aria-label=""> 👨</span> with
+            <span role="img" aria-label=""> ❤️</span>
+          </Typography>
         </Box>
-      </Typography>
+      </Box>
     );
   };
 
   return (
-    <Box>
-      <Copyright />
-    </Box>
+    <Copyright />
   );
 }
 

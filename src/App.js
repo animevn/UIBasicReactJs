@@ -3,10 +3,11 @@ import Header from "./Header"
 import Footer from "./Footer";
 import Home from "./Home";
 import Grid from "@material-ui/core/Grid";
+import {Box} from "@material-ui/core";
 
 function App() {
   return (
-    <div className="main">
+    <Box className="main">
       <Grid>
         <Header/>
         {/*app goes down here*/}
@@ -16,7 +17,7 @@ function App() {
         {/*app goes up here*/}
       </Grid>
       <Footer/>
-    </div>
+    </Box>
   );
 }
 

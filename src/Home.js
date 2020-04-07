@@ -2,12 +2,12 @@ import React, {useState} from "react";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 
 function Home() {
   const [count, setCount] = useState(0);
   const [size, setSize] = useState(1);
   const [show, setShow] = useState(true);
+  const width = {xs:10, sm:8, md:6, lg: 4, xl:4};
 
   function onAddClick() {
     setCount(old=> old + 1);
@@ -18,7 +18,7 @@ function Home() {
   }
 
   function onGrowClick() {
-    if (size < 6) setSize(old=>old + 1);
+    if (size < 9) setSize(old=>old + 1);
   }
 
   function onShrinkClick() {
@@ -36,44 +36,26 @@ function Home() {
   }
 
   const numberBox = ()=> {
-    const width = {xs:10, sm:10, md:8, lg: 6, xl:6};
     return (
-      <Grid container justify="center">
+      <Grid container justify="center" >
         <Grid item {...width}>
-          <Box display="flex" direction="column" justifyContent="center" alignItems="center" height={200}>
-            <Typography>
-              <Box fontSize={`${size}rem`} visibility={show ? "visible" : "hidden"}>
-                {count}
-              </Box>
-            </Typography>
+          <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center"
+               height={200} border={1} borderRadius={5} borderColor="secondary.main" my={3}>
+            <Box fontSize={`${size}rem`} visibility={show ? "visible" : "hidden"}>
+              {count}
+            </Box>
           </Box>
         </Grid>
       </Grid>
-
     )
   };
 
   const buttons = (name, action)=>{
     return (
-      <Button variant="contained" color="secondary" onClick={action}>
+      <Button variant="contained" color="secondary"
+              onClick={action} style={{"width":"5rem"}}>
         {name}
       </Button>
-    )
-  };
-
-  const buttonsBox = (children)=>{
-    return (
-      <div className="col-xl-5 col-lg-5 col-md-7 col-sm-9 col-9 mx-auto mt-5">
-        {children}
-      </div>
-    )
-  };
-
-  const rowBox = (children)=>{
-    return (
-      <div className="row d-flex justify-content-around mb-5">
-        {children}
-      </div>
     )
   };
 
@@ -81,14 +63,33 @@ function Home() {
 
   return (
     <div className="container mt-5">
+
       {numberBox()}
-      {buttonsBox (
-        [
-          rowBox ([buttons("Add", onAddClick), buttons("Take", onTakeClick)]),
-          rowBox ([buttons("Grow", onGrowClick), buttons("Shrink", onShrinkClick)]),
-          rowBox ([buttons(toggle, onShowClick), buttons("Reset", onResetClick)])
-        ]
-      )}
+
+      <Grid container justify="center" >
+        <Grid item {...width}>
+
+          <Box display="flex" flexDirection="row" justifyContent="space-evenly"
+               alignItems="center" my={2}>
+            {buttons("Add", onAddClick)}
+            {buttons("Take", onTakeClick)}
+          </Box>
+
+          <Box display="flex" flexDirection="row" justifyContent="space-evenly"
+               alignItems="center" my={2}>
+            {buttons("Grow", onGrowClick)}
+            {buttons("Shrink", onShrinkClick)}
+          </Box>
+
+          <Box display="flex" flexDirection="row" justifyContent="space-evenly"
+               alignItems="center" my={2}>
+            {buttons(toggle, onShowClick)}
+            {buttons("Reset", onResetClick)}
+          </Box>
+
+        </Grid>
+      </Grid>
+
     </div>
   )
 }
