@@ -2,15 +2,10 @@
 /*is footer-custom, everything else inside main */
 html, body{
     height: 100%;
-    background-color: oldlace;
 }
 
 body{
     background-color: transparent;
-}
-
-.text-link{
-    color: #005cbf;
 }
 
 .main{

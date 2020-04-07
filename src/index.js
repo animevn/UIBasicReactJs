@@ -1,8 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import {ThemeProvider} from "@material-ui/core";
 import App from "./App";
-import "bootstrap/dist/css/bootstrap.min.css"
-import "./App.css"
+import theme from "./indexTheme";
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    <CssBaseline>
+      <App/>
+    </CssBaseline>
+  </ThemeProvider>
+
+
+
+
+
+  , document.getElementById('root'));
 
